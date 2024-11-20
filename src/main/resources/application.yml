@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: LocaleAPI
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://10.10.10.128:13307/snackdb
+    username: snackdbuser
+    password: snackdbuser
+
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      connection-timeout: 10000
+
+naver:
+  client-id: amu41caxhw
+  client-secret: 2YgOPYnrujk4NPGZqxyc2x3T6qimTPGSdGn5fuDe
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+#  type-aliases-package: org.esnack24.localeapi.food.domain
+#
+jpa:
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
+  database-platform: org.hibernate.dialect.MariaDBDialect
+
+logging:
+  level:
+    com.zaxxer: debug
+    org.springframework: info
+
