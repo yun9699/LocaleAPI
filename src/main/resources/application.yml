@@ -4,7 +4,7 @@ spring:
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://10.10.10.128:13307/snackdb
+    url: jdbc:mariadb://10.10.10.166:13307/snackdb
     username: snackdbuser
     password: snackdbuser
 
