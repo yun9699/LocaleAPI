@@ -1,10 +1,12 @@
 spring:
   application:
     name: LocaleAPI
+  config:
+    import: optional:file:.env[.properties]
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://10.10.10.166:13307/snackdb
+    url: jdbc:mariadb://snackdb.chm9rhbwy6vo.ap-northeast-2.rds.amazonaws.com:3306/snackdb
     username: snackdbuser
     password: snackdbuser
 
@@ -14,9 +16,8 @@ spring:
       connection-timeout: 10000
 
 naver:
-  client-id: amu41caxhw
-  client-secret: 2YgOPYnrujk4NPGZqxyc2x3T6qimTPGSdGn5fuDe
-
+  client-id: ${NAVER_CLIENT_ID}
+  client-secret: ${NAVER_CLIENT_SECRET}
 
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
