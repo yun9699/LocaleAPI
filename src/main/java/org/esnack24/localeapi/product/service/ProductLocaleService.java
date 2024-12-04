@@ -80,29 +80,38 @@ public class ProductLocaleService implements ApplicationRunner {
 
             // 영어 번역
             if (product.getPtitle_en() == null) {
-                log.info("영어 번역 시작 - 상품 ID: {}", product.getPno());
+                log.info("영어 제목 번역 시작 - 상품 ID: {}", product.getPno());
                 product.setPtitle_en(papagoLocaleService.translateText("ko", "en", product.getPtitle_ko()));
-//                product.setPcontent_en(papagoLocaleService.translateText("ko", "en", product.getPcontent_ko()));
-//                product.setPcategory_en(papagoLocaleService.translateText("ko", "en", product.getPcategory_ko()));
-                log.info("영어 번역 완료 - 상품 ID: {}", product.getPno());
+                log.info("영어 제목 번역 완료 - 상품 ID: {}", product.getPno());
+            }
+            if (product.getPcontent_en() == null) {
+                log.info("영어 내용 번역 시작 - 상품 ID: {}", product.getPno());
+                product.setPcontent_en(papagoLocaleService.translateText("ko", "en", product.getPcontent_ko()));
+                log.info("영어 내용 번역 완료 - 상품 ID: {}", product.getPno());
             }
 
             // 일본어 번역
             if (product.getPtitle_ja() == null) {
-                log.info("일본어 번역 시작 - 상품 ID: {}", product.getPno());
+                log.info("일본어 제목 번역 시작 - 상품 ID: {}", product.getPno());
                 product.setPtitle_ja(papagoLocaleService.translateText("ko", "ja", product.getPtitle_ko()));
-//                product.setPcontent_ja(papagoLocaleService.translateText("ko", "ja", product.getPcontent_ko()));
-//                product.setPcategory_ja(papagoLocaleService.translateText("ko", "ja", product.getPcategory_ko()));
-                log.info("일본어 번역 완료 - 상품 ID: {}", product.getPno());
+                log.info("일본어 제목 번역 완료 - 상품 ID: {}", product.getPno());
+            }
+            if (product.getPcontent_ja() == null) {
+                log.info("일본어 내용 번역 시작 - 상품 ID: {}", product.getPno());
+                product.setPcontent_ja(papagoLocaleService.translateText("ko", "ja", product.getPcontent_ko()));
+                log.info("일본어 내용 번역 완료 - 상품 ID: {}", product.getPno());
             }
 
             // 중국어 번역
             if (product.getPtitle_zh() == null) {
-                log.info("중국어 번역 시작 - 상품 ID: {}", product.getPno());
+                log.info("중국어 제목 번역 시작 - 상품 ID: {}", product.getPno());
                 product.setPtitle_zh(papagoLocaleService.translateText("ko", "zh-CN", product.getPtitle_ko()));
-//                product.setPcontent_zh(papagoLocaleService.translateText("ko", "zh-CN", product.getPcontent_ko()));
-//                product.setPcategory_zh(papagoLocaleService.translateText("ko", "zh-CN", product.getPcategory_ko()));
-                log.info("중국어 번역 완료 - 상품 ID: {}", product.getPno());
+                log.info("중국어 제목 번역 완료 - 상품 ID: {}", product.getPno());
+            }
+            if (product.getPcontent_zh() == null) {
+                log.info("중국어 내용 번역 시작 - 상품 ID: {}", product.getPno());
+                product.setPcontent_zh(papagoLocaleService.translateText("ko", "zh-CN", product.getPcontent_ko()));
+                log.info("중국어 내용 번역 완료 - 상품 ID: {}", product.getPno());
             }
 
             long endTime = System.currentTimeMillis();

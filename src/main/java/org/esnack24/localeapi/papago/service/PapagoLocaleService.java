@@ -15,10 +15,10 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class PapagoLocaleService {
 
-    @Value("${naver.client-id}")
+    @Value("${NAVER_CLIENT_ID}")
     private String clientId;
 
-    @Value("${naver.client-secret}")
+    @Value("${NAVER_CLIENT_SECRET}")
     private String clientSecret;
 
     private final String PAPAGO_API_URL = "https://naveropenapi.apigw.ntruss.com/nmt/v1/translation";
