@@ -24,7 +24,7 @@ public class PapagoLocaleScheduler {
         this.faqLocaleService = faqLocaleService;
     }
 
-    @Scheduled(cron = "0 0 23 * * ?")
+    @Scheduled(cron = "0 0 0 * * ?")
     public void performScheduledTranslation() {
         try {
             productLocaleService.updateLocaleColumns();
